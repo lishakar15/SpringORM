@@ -36,9 +36,11 @@
     <bean name="template" class="org.springframework.orm.hibernate5.HibernateTemplate">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    <!-- DaoImpl bean with HibernateTemplate property -->
     <bean name="StudentDaoImpl" class="com.spring.orm.dao.StudentDaoImpl">
         <property name="hibernateTemplate" ref="template"> </property>
     </bean>
+    <!-- TransactionManger bean -->
     <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager">
         <property name="sessionFactory" ref = "sessionFactory"/>
     </bean>
